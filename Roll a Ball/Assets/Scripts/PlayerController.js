@@ -1,9 +1,11 @@
 ﻿#pragma strict
 
-var rb:Rigidbody;
+var rb = GetComponent.<Rigidbody>();
+
+var speed:float;
 
 function Start () {
-	rb = GetComponent('Rigidbody');
+	
 }
 
 function Update () {
@@ -16,5 +18,5 @@ function FixedUpdate() {
 
 	var force:Vector3 = new Vector3(moveX, 0, moveY);
 
-	rb.AddForce(force);
+	rb.AddForce(force * speed);
 }
